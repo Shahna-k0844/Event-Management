@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+{% extends "admincommon.html" %}
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% block titleadmin %}Booking{% endblock titleadmin %}
+
+</head>
+<body>
+    {% block admincontents %}
+    <link rel="stylesheet" href="{% static "css/bookview1.css" %}">
+    {% if book %}
+ 
+    <div class="table_page">
+        <h2>BOOKING</h2>
+        <table>
+            <tr>
+                <th>user</th>
+                <th>Time</th>
+                <th>Name</th>
+                <th>Phone</th>
+                <th>Email</th>
+                <th>Place</th>
+                <th>Event</th>
+                <th>Date</th>
+                <th>Description</th>
+            </tr>
+            
+            {% for i in book %}
+            <tr>
+                <td>{{i.user}}</td>
+                <td>{{ i.timestamp }}</td>
+                <td>{{i.name}}</td>
+                <td>{{i.phone}}</td>
+                <td>{{i.email}}</td>
+                <td>{{i.place}}</td>
+                <td>{{i.event}}</td>
+                <td>{{i.date}}</td>
+                <td>{{i.description}}</td>
+
+            </tr>
+        
+            {% endfor %}
+        </table>
+    </div>
+    {% else %}
+    <div class="no_booking">
+        <h2 >NO BOOKING AVAILABLE</h2>
+    </div>
+    {% endif %}
+    
+    {% endblock admincontents %}
+    
+</body>
+</html>

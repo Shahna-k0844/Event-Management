@@ -1,0 +1,83 @@
+{% extends "common.html" %}
+{% load static %}
+{% block title %}booked{% endblock title %}
+{% block contents %}
+<link rel="stylesheet" href="{% static "css/book_form.css" %}">
+<div class="book_form" style='background-image: url("{% static 'images/fruits.jpg' %}");background-size: cover;background-repeat: no-repeat;background-position: center;width: 100%;height:640px;background-attachment:fixed'>
+
+
+    <form  class="form1" action="{% url "bookdetails" %}" method="post">
+        {% csrf_token %}
+        <div class="heading_">
+            <h4>Book your Event</h4>
+        </div>
+        <input type="hidden" name="event_id" value="{{ event.id }}">
+        <input type="hidden" name="time" value="{{ event.time|default:'' }}">
+        <div>
+            <div class="flexboth">
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="label">Name</label>
+                    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name='name'required>
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputPassword1" class="label">Phone</label>
+                    <input type="phone" class="form-control" id="exampleInputPassword1" name='phone'required>
+                </div>
+            </div>
+    
+           
+            <div class="flexboth">
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="label">Email address</label>
+                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name='email'required>
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputPassword1" class="label">Event Date</label>
+                    <input type="date" class="form-control" id="exampleInputPassword1" name='date' min="{{ min_date }}" required>
+                </div>
+    
+    
+            </div>
+            <div class="flexboth">
+                <div class="mb-3">
+                    <label for="exampleInputPassword1" class="label">Event</label>
+                    <input type="text" class="form-control" id="exampleInputPassword1" name='event' value="{{event.name}}" readonly="True">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputPassword1" class="label">Place </label>
+                    <input type="place" class="form-control" id="exampleInputPassword1" name='place' required>
+                </div>
+                <div class="mb-3">
+            </div>
+            </div>
+        <div >
+            <div>
+                <label for="exampleInputPassword1" class="label">Description </label>
+                <input type="text" class="form-control" id="exampleInputPassword1" name='description' required>
+            </div>
+            <div class="submit_">
+                <button type="submit" class="btn btn sm" id="submit1" >Submit</button>
+            </div>
+        </div>
+    
+
+
+        
+
+         
+    </form>
+    {% comment %} <form onsubmit="myfunct()" method="post">
+        {% csrf_token %} 
+        <script>  
+            function myfunct(){
+                alert("product is added to wishlist")
+            }
+
+        </script> 
+        <button type="submit" class="btn btn-outline-danger">Move to wishlist</button>            
+    </form>      {% endcomment %}
+
+
+</div>
+
+{% endblock contents %}

@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+{% extends "common.html" %}
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}home{% endblock title %}</title>
+    <link rel="stylesheet" href="{% static "css/homepage1.css" %}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+{% comment %} <!-- <style>
+    .first {
+        background-image: url("{% static 'images/olive2.jpg' %}");
+    }
+</style> --> {% endcomment %}
+
+<body>
+
+    
+    {% block contents %}
+    <link rel="stylesheet" href="{% static "css/homepage1.css" %}">
+    <!-- <div class="animation">
+       
+        <div>
+            <a href="{% url 'download_file' 'file.pdf' %}"><img class="arrow" src="{% static 'images/arrow_green.png' %}" alt=""></a>
+            <p class="brocure">Brochure</p>
+        </div>
+    </div> -->
+
+    <section> 
+        <div class="first" style='background-image: url("{% static 'images/flora2.jpg' %}");background-size: cover;background-repeat: no-repeat;background-position: center;width: 100%;background-attachment:fixed'>
+            <!-- <div class="image-container">
+                <img class="spark" src="{% static 'images/olive2.jpg' %}" alt="" style="width: 100%; ">
+            </div> -->
+            <div class="heading"> 
+                <h1 class="planning" ><strong>EVENT PLANNING IS HARD</strong></h1>
+                <h6 class="wecan">WE CAN HELP YOU</h6>
+            </div>
+    
+        </div>
+        <div class="second" >
+            <div>
+                <h5 class="second_heading" >Why should you choose <span class="second_plan">PlaniT</span></h5>
+                <p class="second_para">Since every event is different, we at PlaniT take great pleasure in customizing our services to exactly fit your vision. Being Kochi’s top event management company, we handle every little detail so you may enjoy the happiness of your big day.
+
+                    The secret to PlaniT Event Management‘s success is our ability to meticulously organize and carry out each event. Our team of experienced managers has all the abilities and skills to design your event successfully.</p>
+
+            </div>
+            <div>
+                <img class="second_image" src="{% static 'images/bunch-flowers.webp' %}" alt="">
+            </div>
+        </div> 
+        <div class="third">
+            <h2 class="third_heading" ><span class="second_plan">PlaniT</span> Event Services</h2>
+            <div class="third2">
+                <div class="services">
+                    <img class="decor" src="{% static "images/decor.jpg" %}" alt="">
+                    <h4>Decor</h4>
+                    <p>Event is the most efficient & direct tool forany communication. Entertainment in an event helps to leave a better.</p>
+                    <a class="" data-bs-toggle="modal" data-bs-target="#getintouchModal" id="enq_now" aria-current="page" href="#">Enquery Now</a>
+    
+                </div>
+                <div class="services">
+                    <img class="decor"  src="{% static "images/catering.jpg" %}" alt="">
+                    <h4>Catering</h4>
+                    <p>Event is the most efficient & direct tool forany communication. Entertainment in an event helps to leave a better.</p>
+                    <a class="" data-bs-toggle="modal" data-bs-target="#getintouchModal" id="enq_now" aria-current="page" href="#">Enquery Now </a>
+
+                </div>
+                <div class="services">
+                    <img class="decor"  src="{% static "images/hospitality.jpg" %}" alt="">
+                    <h4>Hospitality</h4>
+                    <p>Event is the most efficient & direct tool forany communication. Entertainment in an event helps to leave a better.</p>
+                    <a class="" data-bs-toggle="modal" data-bs-target="#getintouchModal" id="enq_now" aria-current="page" href="#">Enquery Now </a>
+
+                </div>
+                <div class="services">
+                    <img class="decor"  src="{% static "images/entertainment.jpg" %}" alt="">
+                    <h4>Entertainment</h4>
+                    <p>Event is the most efficient & direct tool forany communication. Entertainment in an event helps to leave a better.</p>
+                    <a class="" data-bs-toggle="modal" data-bs-target="#getintouchModal" id="enq_now" aria-current="page" href="#">Enquery Now </a>
+
+                </div>
+    
+    
+            </div>
+        </div>
+        <div class="modal fade" id="getintouchModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg"> 
+              <div class="modal-content">
+                <div class="modal-header">
+                  <div>
+                    <img class="planit" src="{% static 'images/plan4.png' %}" alt="">
+                  </div>
+                  <div>
+                    {% comment %} <h1 class="modal-title fs-5" id="exampleModalLabel">Get in Touch</h1> {% endcomment %}
+                  </div>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                
+                <div class="modal-body d-flex">
+                  
+                  <div class="modal-image col-lg-6">
+                    <img src="{% static "images/haldi.png" %}" alt="Login Image" class="fourth_image">
+                  </div>
+          
+                  
+                  <div class="modal-form col-lg-6">
+                    <form action="{% url "enquiery" %}" method="post">
+                        {% csrf_token %}
+                        <div>
+                            <h4 class="book_head">Get in Touch</h4>
+                        </div>
+                        <div class="flexboth">
+                            <div class="mb-3">
+                                <label for="exampleInputEmail1" class="label">Name</label>
+                                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name='name'required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="exampleInputPassword1" class="label">Phone</label>
+                                <input type="phone" class="form-control" id="exampleInputPassword1" name='phone'required>
+                            </div>
+                            </div>
+    
+                       
+                        <div class="flexboth">
+                            <div class="mb-3">
+                                <label for="exampleInputEmail1" class="label">Email address</label>
+                                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name='email' required>
+                            </div>
+                            <!-- <div class="mb-3">
+                                <label for="exampleInputPassword1" class="label">Event Date</label>
+                                <input type="date" class="form-control" id="exampleInputPassword1" name='date'>
+                            </div> -->
+                            <div class="mb-3">
+                                <label for="exampleInputPassword1" class="label">Event</label>
+                                <input type="text" class="form-control" id="exampleInputPassword1" name='event' required>
+    
+                                <!-- <select name="" id="">
+                                    <option value="">Wedding</option>
+                                    <option value="">Birthday</option>
+                                    <option value="">Anniversary</option>
+                                </select> -->
+                            </div>
+        
+                        </div>
+                        <div class="flexboth">
+                          
+    
+        
+                        </div>
+                        <div >
+                            <div>
+                                <label for="exampleInputPassword1" class="label">Description </label>
+                                <input type="textarea" class="form-control" id="exampleInputPassword1" name='description' required>
+                            </div>
+        
+        
+                        </div>
+                        <div class="submit_button" style="padding-top:2em" >
+    
+                            <button type="submit" class="btn btn-sm" style ="background-color: #dd2d4a">Submit</button>
+                        </div>
+    
+                         
+                    </form>
+    
+
+                   
+
+                  </div>
+                </div>
+
+              </div>
+            </div>
+        </div>
+
+        <!-- <div style='background-attachment:fixed'>
+            <img src="{% static "images/flora2.jpg" %}" alt="">
+
+        </div> -->
+        <div class="background" style='background-image: url("{% static 'images/wed6_.jpg' %}");background-size: cover;background-repeat: no-repeat;background-position: center;width: 100%;background-attachment:fixed'>
+            <!-- <div class="image-container">
+                <img class="spark" src="{% static 'images/olive2.jpg' %}" alt="" style="width: 100%; ">
+            </div> -->
+            <div class="heading4" > 
+                <h1 class="planning4" ><strong>Creating Moments That Last A Lifetime</strong></h1>
+                <h6 class="wecan4">Making the ordinary, extrodinary</h6>
+                <p class="para">This lucite mandap with overflowing florals tempts guests to keep their eyes on the ceremony at all times — despite the stunning ocean views. We adore how event planner Eventrics Indian Weddings and designer Prashe Decor create the illusion of free-floating florals that extend down the aisle with clusters of soft-toned blooms.We hope you enjoy this beautiful Indian wedding at the Ritz Carlton Laguna Niguel featuring Puja and Sahil. Special thanks to the wedding planner, Planning.</p>
+            </div>
+    
+        </div>
+
+
+        <div class="fourth" style="background-attachment:fixed">
+            <div> 
+                <!-- <img class="fourth_image" src="{% static "images/expert_wedding.webp" %}" alt=""> -->
+                <img class="fourth_image" src="{% static "images/haldi.png" %}" alt="">
+
+            </div>
+            <div>
+                <form action="{% url "enquiery" %}" method="post">
+                    {% csrf_token %}
+                    <div>
+                        <h4 class="book_head">Get in Touch</h4>
+                    </div>
+                    <div class="flexboth">
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="label">Name</label>
+                            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name='name' required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleInputPassword1" class="label">Phone</label>
+                            <input type="phone" class="form-control" id="exampleInputPassword1" name='phone' required>
+                        </div>
+                        </div>
+
+                   
+                    <div class="flexboth">
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="label">Email address</label>
+                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name='email' required>
+                        </div>
+                        <!-- <div class="mb-3">
+                            <label for="exampleInputPassword1" class="label">Event Date</label>
+                            <input type="date" class="form-control" id="exampleInputPassword1" name='date'>
+                        </div> -->
+                        <div class="mb-3">
+                            <label for="exampleInputPassword1" class="label">Event</label>
+                            <input type="text" class="form-control" id="exampleInputPassword1" name='event' required>
+
+                        </div>
+    
+                    </div>
+                    <div class="flexboth">
+                      
+
+    
+                    </div>
+                    <div >
+                        <div>
+                            <label for="exampleInputPassword1" class="label">Description </label>
+                            <input type="textarea" class="form-control" id="exampleInputPassword1" name='description' required>
+                        </div>
+    
+    
+                    </div>
+                    <div style="padding-top:2em">
+
+                        <button type="submit" class="btn btn-sm" style="background-color: #dd2d4a">Submit</button>
+                    </div>
+
+                     
+                </form>
+            </div>
+        </div>
+
+
+    </section>
+    
+    {% endblock contents %}
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>    
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+{% extends "admincommon.html" %}
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block titleadmin %}createEvent{% endblock titleadmin %}</title>
+</head>
+<body>
+    {% block admincontents %}
+    <link rel="stylesheet" href="{% static "css/createform1.css" %}">
+    <div >
+    <!-- <center> -->
+        <div class="createform" >
+            <form class="create_form" action="" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{form.as_p}}
+                <button type="submit" class="btn btn-danger btn-sm">Submit</button>            </form>
+        </div>
+    <!-- </center> -->
+    </div>
+
+    {% endblock admincontents %}
+</body>
+</html>

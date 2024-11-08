@@ -1,0 +1,13 @@
+{% extends "common.html" %}
+{% load static %}
+{% block title %}subgallery{% endblock title %}
+{% block contents %}
+<link rel="stylesheet" href="{% static "css/subgallery1.css" %}">
+<div  class="subimagess" style='background-image: url("{% static 'images/back3.avif' %}");background-size: cover;background-repeat: no-repeat;background-position: center;width: 100%;background-attachment:fixed'>
+
+{% for i in subimage %}
+    <img class="sub_image_" src="{{i.image.url}}" alt="">
+{% endfor %}
+
+</div>
+{% endblock contents %}

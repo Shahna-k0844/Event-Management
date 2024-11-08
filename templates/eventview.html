@@ -1,0 +1,92 @@
+{% extends "common.html" %}
+{% load static %}
+{% block title %}Events{% endblock title %}
+{% block contents %}
+<link rel="stylesheet" href="{% static "css/eventview1.css" %}">
+<link rel="stylesheet" href="{% static "css/headernew.css" %}">
+<div class="event_page" style='background-image: url("{% static 'images/flora.png' %}");background-size: cover;background-repeat: no-repeat;background-position: center;width: 100%;background-attachment:fixed'>
+    {% for i in event %}
+    <div class="eventdisplays">
+        <div>
+            <img class="event_image" src="{{i.image.url}}" alt="">
+        </div>
+        <div class="para_plus_head">
+            <div>
+                <h3>{{i.name}}</h3>
+            </div>
+            <div>
+                <p>{{i.description}}</p>
+            </div>
+            {% if i.booked %}
+            <div class="flexx">
+                <div class="book">
+                    <a class="book_link" href="">Booked</a>
+    
+                </div>
+                <div class="book">
+                    <a class="detail_link" href="{% url 'view_details' i.id %}">View Details</a>
+    
+                </div>
+                </div>
+            
+            {% else %}
+            <div class="book">
+                <a class="book_link" href="{% url 'booked' i.id %}">Book Event</a>
+
+            </div>
+            {% endif %}
+        </div>
+    </div>
+    {% endfor %}
+
+    {% if messages %}
+        {% for message in message %}
+        <p>{{message}}</p>
+        {% endfor %}
+    {% endif %}
+</div>
+<div class="modal fade" id="booknow{{ i.id }}" tabindex="-1" aria-labelledby="exampleModalLabel{{ i.id }}" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel{{ i.id }}">Book Your Event</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form action="{% url 'bookdetails' %}" method="post">
+                    {% csrf_token %}
+                    <input type="hidden" name="event_id" value="{{ i.id }}">
+                    
+                    <!-- Form fields -->
+                    <div class="mb-3">
+                        <label for="name" class="label">Name</label>
+                        <input type="text" class="form-control" id="name" name="name">
+                    </div>
+                    <div class="mb-3">
+                        <label for="phone" class="label">Phone</label>
+                        <input type="text" class="form-control" id="phone" name="phone">
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="label">Email</label>
+                        <input type="email" class="form-control" id="email" name="email">
+                    </div>
+                    <div class="mb-3">
+                        <label for="date" class="label">Event Date</label>
+                        <input type="date" class="form-control" id="date" name="date">
+                    </div>
+                    <div class="mb-3">
+                        <label for="place" class="label">Place</label>
+                        <input type="text" class="form-control" id="place" name="place">
+                    </div>
+                    <div class="mb-3">
+                        <label for="description" class="label">Description</label>
+                        <textarea class="form-control" id="description" name="description"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-sm" style="background-color: #dd2d4a;">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock contents %}

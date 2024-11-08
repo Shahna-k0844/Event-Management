@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+{% extends "common.html" %}
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block title %}login{% endblock title %}
+  </head>
+<body>
+    {% block contents %}
+    <link rel="stylesheet" href="{% static "css/book_form11.css" %}">
+
+    <div class="book_form" style='background-image: url("{% static 'images/flora.png' %}");background-size: cover;background-repeat: no-repeat;background-position: center;width: 100%;height:640px;background-attachment:fixed'>
+      {% comment %} <a class="nav-link active" data-bs-toggle="modal" data-bs-target="#exampleModal" id="navlinks" aria-current="page" href="#">Login</a> {% endcomment %}
+      <form class="form_login" action="{% url "login" %}" method="post">
+          {% csrf_token %}
+          <div class="please">
+            <p >Please login to book an event </p>
+
+          </div>
+          
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Username</label>
+            <input type="text" class="form-control"  name='username' required>
+            <div id="emailHelp" class="form-text">We'll never share your username with anyone else.</div>
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Password</label>
+            <input type="password" class="form-control" id="exampleInputPassword1" name='password' required>
+          </div>
+          <div class="submit1">
+            {% comment %} <a href="{% url "login" %}"> {% endcomment %}
+              <button type="submit" class="btn btn-danger btn-sm" id="submit">Submit</button>
+            {% comment %} </a> {% endcomment %}
+          </div>
+          {% if messages %}
+            {% for message in messages %}
+                <h5 style="color:red">{{message}}</h5>
+            {% endfor %}
+          {% endif %} 
+
+          <div class="dont">
+            <p class="dont_have">Don't have an account?</p>
+              <a class="signlink" data-bs-toggle="modal" data-bs-target="#signUpModal">SignUp</a>
+          </div>
+      </form>
+
+
+    </div>
+    {% endblock contents %}
+</body>
+</html>

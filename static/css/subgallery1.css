@@ -1,0 +1,26 @@
+.subimagess{
+    display: flex;
+    flex-wrap: wrap;
+    justify-items: center;
+    justify-content: center;
+    /* padding-inline: 6em; */
+    padding-top: 2em;
+    padding-bottom: 4em;
+    gap:2em;
+    background-color: black;
+}
+.sub_image_{
+    width: 450px;
+    height:350px
+}
+/* .sub_image_:hover{
+    width: 600px;
+    height: 400px;
+} */
+@media screen  and (max-width:425px){
+    .sub_image_{
+        width: 420px;
+        height: 300px;
+    }
+    
+}

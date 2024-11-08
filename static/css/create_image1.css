@@ -1,0 +1,28 @@
+.add_image{
+    width: fit-content;
+    padding: 5em;
+    background-color: rgb(240, 219, 223);
+
+}
+.created{
+    padding-top: 5em;
+    justify-items: center;
+    padding-bottom: 6em;
+    /* background-color: #d1e7b5; */
+    /* padding-inline: 27em; */
+}
+.ur{
+    text-align: center;
+    font-weight: 600;
+    font-size: 2em;
+}
+@media screen and (max-width:425px){
+
+    .add_image{
+        padding: 1.5em;
+    }
+    .created{
+        padding-top: 2em;
+        padding-bottom: 2em;
+    }
+}

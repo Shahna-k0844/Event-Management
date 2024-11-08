@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static "css/headernew1.css" %}">
+</head>
+<body>
+    <header>
+        <div class="header1">
+            <nav class="navbar navbar-expand-lg my-custom-navbar">
+                <div class="container-fluid">
+                  {% comment %} <a class="navbar-brand" href="#">Navbar</a> {% endcomment %}
+                  <img class="logo" src="{% static "images/plan4.png" %}" alt="">
+
+                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav">
+                            <li>
+                                <a class="home" href="{% url "home" %}">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" id="navlinks" aria-current="page"  href=" {% url "about"  %}">About</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" id="navlinks" aria-current="page"  href="{% url "eventview"  %}">Events</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" id="navlinks" aria-current="page" href="{% url "gallery" %}">Gallery</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" data-bs-toggle="modal" data-bs-target="#exampleModal" id="navlinks" aria-current="page" href="#">Login</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" id="navlinks" aria-current="page" href="{% url "logout" %}">Logout</a>
+                            </li>
+            
+                            <div class="button">
+                                <a class="loginbutton" id="loginbutton" data-bs-toggle="modal" data-bs-target="#contactModal" aria-current="page" href="#">Contact</a>
+                            </div>
+                        </ul>
+                    </div>
+                </div>
+              </nav>
+        </div>
+        <!-- Button trigger modal -->
+        {% comment %} <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#contactModal">
+          Launch demo modal
+        </button> {% endcomment %}
+
+        <!-- Modal contact -->
+        <div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content" id="contactModals">
+              <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">CONTACT</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <!-- <div class="medias">
+                  <div>
+                    <a href="https://instagram.com/__.shahna" target="_blank">
+                    <img class="social_media" src="{% static "images/instagram.png" %}" alt=""></a>
+                  </div>
+                  <div>
+                    <a href="https://wa.me/9495680844?text=Hello%20there!" target="_blank">
+                    <img class="social_media" src="{% static "images/whatsapp.png" %}" alt="">
+                    </a>
+                  </div>
+                  <div>
+                    <img class="social_media" src="{% static "images/video.png" %}" alt="">
+                  </div>
+                  <div>
+                    <img class="social_media" src="{% static "images/twitter.png" %}" alt="">
+                  </div>
+
+                </div> -->
+                <div class="form_contact">
+                  <form action="{% url "enquiery" %}" method="post">
+                    {% csrf_token %}
+                    <!-- <div>
+                        <h4 class="book_head">Get in Touch</h4>
+                    </div> -->
+                    <div class="flexboth">
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="label">Name</label>
+                            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name='name' required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleInputPassword1" class="label">Phone</label>
+                            <input type="phone" class="form-control" id="exampleInputPassword1" name='phone' required>
+                        </div>
+                        </div>
+
+                   
+                    <div class="flexboth">
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="label">Email address</label>
+                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name='email' required>
+                        </div>
+                        <!-- <div class="mb-3">
+                            <label for="exampleInputPassword1" class="label">Event Date</label>
+                            <input type="date" class="form-control" id="exampleInputPassword1" name='date'>
+                        </div> -->
+                        <div class="mb-3">
+                            <label for="exampleInputPassword1" class="label">Event</label>
+                            <input type="text" class="form-control" id="exampleInputPassword1" name='event' required>
+
+                        </div>
+    
+                    </div>
+                    <div class="flexboth">
+                      
+
+    
+                    </div>
+                    <div >
+                        <div>
+                            <label for="exampleInputPassword1" class="label">Description </label>
+                            <input type="textarea" class="form-control" id="exampleInputPassword1" name='description' required>
+                        </div>
+    
+    
+                    </div>
+                    <div style="padding-top:2em">
+
+                        <button type="submit" class="btn btn-sm" style="background-color: #dd2d4a">Submit</button>
+                    </div>
+
+                     
+                  </form>
+
+                  
+                </div>
+                
+
+
+              </div>
+              <div class="modal-footer">
+                <div class="medias">
+                  <div>
+                    <a class="mobile" href="tel:+919495680844" target="_blank">
+                      9495680844
+                    <!-- <img class="social_media" src="{% static "images/instagram.png" %}" alt=""></a> -->
+                  </div>
+                  <div>
+                    <a href="https://instagram.com/__.shahna" target="_blank">
+                    <img class="social_media" src="{% static "images/instagram.png" %}" alt=""></a>
+                  </div>
+                  <div>
+                    <a href="https://wa.me/9495680844?text=Hello%20there!" target="_blank">
+                    <img class="social_media" src="{% static "images/whatsapp.png" %}" alt="">
+                    </a>
+                  </div>
+                  <div>
+                    <img class="social_media" src="{% static "images/video.png" %}" alt="">
+                  </div>
+                  <div>
+                    <img class="social_media" src="{% static "images/twitter.png" %}" alt="">
+                  </div>
+
+                </div>
+                <!-- <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button> -->
+              </div> 
+            </div>
+          </div>
+        </div>
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg"> 
+              <div class="modal-content">
+                <div class="modal-header">
+                  <div>
+                    <img class="planit" src="{% static 'images/plan4.png' %}" alt="">
+                  </div>
+                  <div>
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">LOGIN</h1>
+                  </div>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                
+                <div class="modal-body d-flex">
+                  
+                  <div class="modal-image col-lg-6">
+                    <img src="{% static 'images/images.jpeg' %}" alt="Login Image" class="image">
+                  </div>
+          
+                  
+                  <div class="modal-form col-lg-6">
+                    <form action="{% url "login" %}" method="post">
+                      {% csrf_token %}
+                      <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">Username</label>
+                        <input type="text" class="form-control"  name='username' required>
+                        <div id="emailHelp" class="form-text">We'll never share your username with anyone else.</div>
+                      </div>
+                      <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label">Password</label>
+                        <input type="password" class="form-control" id="exampleInputPassword1" name='password' required>
+                      </div>
+                      <div class="submit1">
+                        {% comment %} <a href="{% url "login" %}"> {% endcomment %}
+                          <button type="submit" class="btn btn-danger btn-sm" id="submit">Submit</button>
+                        {% comment %} </a> {% endcomment %}
+                      </div>
+                      {% if messages %}
+                        {% for message in messages %}
+                            <h5 style="color:red">{{message}}</h5>
+                        {% endfor %}
+                      {% endif %} 
+          
+                      <div class="dont">
+                        <p class="dont_have">Don't have an account?</p>
+                          <a class="signlink" data-bs-toggle="modal" data-bs-target="#signUpModal">SignUp</a>
+                      </div>
+                    </form>
+
+                   
+
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+          
+          <div class="header2">
+            <nav class="navbar navbar-expand-lg my-custom-navbar">
+              <div class="container-fluid">
+                <!-- <a class="navbar-brand" href="#">Navbar</a> -->
+                 <img class="logo_header2" src="{% static "images/plan4.png" %}" alt="">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                  <ul class="navbar-nav">
+                    <li class="nav-item">
+                      <a class="nav-link active" aria-current="page" href="{% url "home" %}">Home</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="{% url "about"  %}">About</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="{% url "eventview" %}">Events</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="{% url "gallery" %}">gallery</a>
+                    </li>
+
+                    <li class="nav-item">
+                      <a class="nav-link active" data-bs-toggle="modal" data-bs-target="#exampleModal" id="navlinks" aria-current="page" href="#">Login</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="{% url "logout" %}">Logout</a>
+                    </li>
+    
+    
+                  </ul>
+                </div>
+              </div>
+            </nav>
+    
+          </div>
+          <div class="modal fade" id="signUpModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg"> 
+              <div class="modal-content">
+                <div class="modal-header">
+                  <div>
+                    <img class="planit" src="{% static 'images/plan4.png' %}" alt="">
+                  </div>
+                  <div>
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">SIGNUP</h1>
+                  </div>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                
+                <div class="modal-body d-flex">
+                  
+                  <div class="modal-image col-lg-6">
+                    <img src="{% static 'images/images.jpeg' %}" alt="Login Image" class="image">
+                  </div>
+          
+                  
+                  <div class="modal-form col-lg-6">
+                    <form action="{% url "signup" %}" method="post">
+                      {% csrf_token %}
+                      <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label">Name</label>
+                        <input type="text" class="form-control" id="exampleInputPassword1" name='username' required>
+                      </div>
+
+                      <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">Email address</label>
+                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email" required>
+                        <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                      </div>
+                      <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label">Password</label>
+                        <input type="password" class="form-control" id="exampleInputPassword1" name="password" required>
+                      </div>
+                      <div class="submit">
+                        {% comment %} <a href="{% url "signup" %}"> {% endcomment %}
+                          <button type="submit" class="btn btn-danger btn-sm" id="submit1">Submit</button>
+                        {% comment %} </a> {% endcomment %}
+                      </div>
+                      {% comment %} <div class="dont">
+                          <a class="signlink" data-bs-toggle="modal" data-bs-target="#exampleModal">login</a>
+                      </div> {% endcomment %}
+
+
+                    </form>
+                    {% if messages %}
+                      {% for message in messages %}
+                        <p>{{message}}</p>
+                      {% endfor %}
+                  
+                    {% endif %}
+
+
+                   
+
+                  </div>
+          </div>
+
+    
+    
+    </header>
+</body>
+</html>

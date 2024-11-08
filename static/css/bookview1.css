@@ -1,0 +1,36 @@
+.table_page{
+    /* justify-content: center; */
+    justify-items: center;
+    padding-top: 2em;
+    padding-bottom: 19em;
+}
+table,td,th{
+    border: 1px solid black;
+    padding: 1.6em;
+}
+th{
+    color: orangered;
+    padding: 1em;
+}
+.no_booking{
+    padding-top: 10em;
+    justify-items: center;
+    justify-content: center;
+    padding-bottom: 10em;
+}
+@media screen and (max-width:425px) {
+    .table_page{
+        width: 420px;
+    }
+    table{
+        width:400px;
+        font-size: 6.5pt;
+    }
+    table,td,th{
+        padding: .6em;
+    }
+    th{
+        padding: .1em;
+    }
+    
+}

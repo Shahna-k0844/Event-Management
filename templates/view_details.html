@@ -1,0 +1,82 @@
+{% extends "common.html" %}
+{% load static %}
+{% block title %}details{% endblock title %}
+
+{% block contents %}
+<link rel="stylesheet" href="{% static "css/details_show.css" %}">
+<div style='background-image: url("{% static 'images/wed555.jpg' %}");background-size: cover;background-repeat: no-repeat;background-position: center;width: 100%;background-attachment:fixed;height:39.9em'>
+    <div class="all">
+        <div class="details">
+            <div class="confirmed">
+                <h5 class="your">Your Booking Was Confirmed</h5>
+                <h6>Our Team Will Contact You Soon</h6>
+            </div>
+            <table class="table table-striped">
+                <tr>
+                    <th>Name         : </th>
+                    <td><h6>{{booking.name}}</h6></td>
+                </tr>
+                <tr>
+                    <th>Event        : </th>
+                    <td><h6>{{booking.event}}</h6></td>
+                </tr>
+                <tr>
+                    <th>Event Date        : </th>
+                    <td><h6>{{booking.date}}</h6></td>
+                </tr>
+                <tr>
+                    <th>Email       : </th>
+                    <td><h6>{{booking.email}}</h6></td>
+                </tr>
+                <tr>
+                    <th>Phone        : </th>
+                    <td><h6>{{booking.phone}}</h6></td>
+                </tr>
+                <tr>
+                    <th>Place         : </th>
+                    <td><h6>{{booking.place }}</h6></td>
+                </tr>
+                <tr>
+                    <th>Description       : </th>
+                    <td><h6>{{booking.description}}</h6></td>
+                </tr>
+
+
+
+
+
+            </table>
+            <!-- <h6><strong>Name         : </strong>{{booking.name}}</h6>
+            <h6><strong>Event        : </strong>{{booking.event}}</h6>
+            <h6><strong>Event Date   : </strong>{{booking.date}}</h6>
+            <h6><strong>Email        : </strong>{{booking.email}}</h6>
+            <h6><strong>Phone        : </strong>{{booking.phone}}</h6>
+            <h6><strong>Place        : </strong>{{booking.place}}</h6>
+            <h6><strong> Description : </strong>{{booking.description}}</h6> -->
+            <div class="cancel_button">
+                <a class="cancel_link" href="{% url "cancel_event" event.id %}">Cancel Booking</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- <script>
+    const images = [
+        "{% static 'images/bride-groom.jpg' %}",
+        "{% static 'images/band.jpg' %}",
+        "{% static 'images/wed555.jpg' %}"
+        // Add more image paths as needed
+    ];
+
+    let currentImageIndex = 0;
+
+    function changeBackgroundImage() {
+        const container = document.querySelector("div[style^='background-image']");
+        container.style.backgroundImage = `url('${images[currentImageIndex]}')`;
+        currentImageIndex = (currentImageIndex + 1) % images.length;
+    }
+
+    changeBackgroundImage();
+    setInterval(changeBackgroundImage, 20000);</script> -->
+
+
+{% endblock contents %}

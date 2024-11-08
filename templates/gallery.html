@@ -1,0 +1,21 @@
+{% extends "common.html" %}
+{% load static %}
+{% block title %}gallery{% endblock title %}
+{% block contents %}
+<link rel="stylesheet" href="{% static "css/gallery1.css" %}">
+<div  class="subimagess" style='background-image: url("{% static 'images/groom-putting-ring-overlay.jpg' %}");background-size: cover;background-repeat: no-repeat;background-position: center;width: 100%;background-attachment:fixed'>
+{% for i in images %}
+
+<div class="image-container1">
+    <a href="">
+        <img class="main_image" src="{{ i.image.url }}" alt="">
+    </a>
+    <div class="absolute">
+        <h5 class="name_event">{{ i.name }}</h5>
+        <a class="explore" href="{% url 'subgallery' i.id %}">Explore</a>
+    </div>
+</div>
+
+{% endfor %}
+</div>
+{% endblock contents %}

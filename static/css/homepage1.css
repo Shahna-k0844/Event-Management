@@ -1,0 +1,345 @@
+/* section{
+    
+} */
+body, html {
+    height: 100%;
+    margin: 0;
+}
+
+.formss {
+    display: grid;
+    /* place-items: center; */
+    justify-items: center; 
+    padding-top: 6em;
+    height: 100vh; 
+    /* background-color: red; */
+}
+
+form {
+    width: 500px;  
+    padding: 20px;
+    /* background-color: #f9f9f9; */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    /* height:28em; */
+    line-height:  2.5em;
+    /* background-color: red; */
+}
+/* .signlink{
+    text-decoration: none;
+    padding-left:6.2em ;
+    color: rgb(1, 145, 228);
+} */
+.dont{
+    /* line-height: 1em; */
+    /* padding-top: 2em; */
+    /* padding-left: 16em; */
+    color: rgb(98, 55, 5);
+    text-transform: capitalize;
+
+}
+
+
+.form-text{
+    color: #20201f;
+    text-transform: capitalize;
+}
+
+/* .spark{
+    background-image: url();
+
+} */
+.image-container {
+    overflow: hidden;
+    width: 100%;
+    height: auto;
+    position: relative;
+}
+
+/* Image styling with zoom effect on hover */
+.image-container img {
+    transition: transform 0.5s ease-in-out; /* Smooth zoom transition */
+    width: 100%;
+    height: auto;
+    opacity: .5;
+}
+
+
+.heading{
+    position: absolute;
+    top: 29em;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centering */
+    text-align: center; 
+    color: rgb(0, 0, 0);
+    text-shadow: 
+    -1px -1px 0 #f9edb4,  /* Top-left shadow */
+    1px -1px 0 #000000,   /* Top-right shadow */
+    -1px 1px 0 #f9faea,   /* Bottom-left shadow */
+    1px 1px 0 #292927; 
+    
+}
+
+.image-container:hover .heading{
+    transform: scale(1.1); 
+}
+
+.planning{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 4.99em;
+    flex-wrap: nowrap;
+
+} 
+.planning:hover{
+    font-size: 5em;
+   
+}
+.second{
+    background-color: #f5f6de;
+    display:flex;
+    padding-inline: 9em;
+    padding-top: 3em;
+    gap: 7em;
+    padding-bottom: 3em;
+    /* border: 1px solid black; */
+}
+.second_para{
+    color:rgb(41, 39, 39);
+    padding-top: 2em;
+}
+.second_heading{
+    color: rgb(23, 53, 31);
+    font-size: 25pt;
+}
+.second_image{
+    width: 500px;
+    height:300px
+}
+.second_plan{
+    color: orange;
+
+}
+.first {
+    height: 35em;
+
+}
+.background{
+    height: 45em;
+}
+
+.decor{
+    width: 350px;
+    height: 300px;
+    /* border: 1px solid #2a2a2a; */
+    /* border-radius: 13px; */
+    box-shadow: 0 0 10px #7ca76f;
+    /* animation: website 3s infinite; */
+
+}
+/* @keyframes website{
+    0%{ transform: scale(.9);}
+    50%{transform: scale(.98);}
+    100%{transform: scale(.9);}
+} */
+.third{
+    padding-top: 3em;
+    padding-bottom: 4.5em;
+}
+.third_heading{
+    text-align: center;
+
+}
+.third2{
+    display:flex;background-color:rgb(255, 255, 255);padding-inline:3.5em;flex-wrap:wrap;gap:3em;padding-top:4em
+}
+.services{
+    width:300px;align-items:center;text-align:center
+}
+.decor{
+    width: 220px;height: 220px;border-radius:300px
+}
+.flexboth{
+    display:flex;
+    gap:2em
+
+}
+.fourth{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 2em;
+    padding-bottom: 6em;
+    background-color: #faf6de;
+    /* padding-inline: 12em; */
+}
+.fourth_image{
+    display: block;
+    width: 350px;
+    height: 440px;
+}
+form{
+    background-color: white;
+    border-radius: 0px;
+    padding-bottom: 3em;
+}
+.book_head{
+    color: #442e21;
+    padding-left: 4.5em;
+}
+.label{
+    color: #dd2d4a;
+    font-weight: 600;
+}
+/* .submit_button{
+    padding-top:2em;
+
+}
+.sub_button{
+    background-color: #dd2d4a;
+    border: none;
+} */
+#enq_now{
+    text-decoration: none;
+    color: rgb(251, 148, 14);
+    font-weight: 500;
+}
+#enq_now:hover{
+    color:rgb(251, 117, 14) ;
+}
+.arrow{
+    letter-spacing: -0px; 
+}
+.heading4{
+    padding-top: 17em;
+    justify-items: center;
+    color: rgb(0, 0, 0);
+    /* justify-content: center; */
+}
+.planning4{
+    text-shadow: 
+    -1px -1px 0 #f9edb4,  /* Top-left shadow */
+    1px -1px 0 #000000,   /* Top-right shadow */
+    -1px 1px 0 #f9faea,   /* Bottom-left shadow */
+    1px 1px 0 #292927; 
+
+
+    font-size:36pt ;
+}
+.wecan4{
+    text-shadow: 
+    -1px -1px 0 #f9edb4,  /* Top-left shadow */
+    1px -1px 0 #000000,   /* Top-right shadow */
+    -1px 1px 0 #f9faea,   /* Bottom-left shadow */
+    1px 1px 0 #292927; 
+
+
+    font-size: 17pt;
+}
+.para{
+    color: #0a0a0a;
+    padding-top: 2em;
+    width: 45%;
+    font-weight: 600;
+}
+.arrow{
+    width: 70px;
+}
+.animation{
+    position: fixed;
+    z-index: 1;
+    right: 5em;
+    top: 10em;
+    animation:arrow 2s infinite;
+
+}
+/* img.decor {
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); 
+    border-radius: 120px; 
+    transition: box-shadow 0.3s ease; 
+}
+
+img.decor:hover {
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3); 
+} */
+
+@keyframes arrow {
+    0%{ transform: scale(1);}
+    50%{transform: scale(.88);}
+    100%{transform: scale(1);}
+
+    
+}
+.brocure{
+    display: none;
+}
+.brocure :hover{
+    display: block;
+}
+@media screen and (max-width:425px){
+    .image-container img {
+        transition: none; 
+        opacity:.6;
+    }
+    .heading{
+        /* display: none; */
+        position: relative;
+        top: 28em;
+        left: 50%;
+        /* transform: translate(-50%, -50%); */
+        /* text-align: center;
+        color: rgb(2, 2, 2); 
+        font-weight: 600; */
+        font-size: 3pt;
+        
+    }
+    .first{
+        height: 13em;
+    }
+    .spark{
+        display: none;
+    }
+    .second{
+        display: block;
+        padding-inline: 1em;
+    }
+    .second_image{
+        display: none;
+    }
+    .fourth{
+        width: 100%;
+        padding-inline: 3em;
+    }
+    .fourth_image{
+        display: none;
+    }
+    form {
+        /* max-width: fit-content; */
+        width: 100%;
+        background-color: rgb(252, 252, 220);
+    }
+    .heading4{
+        padding-top: 5em;
+        justify-items: center;
+        /* justify-content: center; */
+    }
+    .planning4{
+        text-wrap: nowrap;
+        font-size: 15pt;
+    }
+    .para{
+        display: none;
+        width: 90%;
+
+    }
+    .background{
+        height: 16em;
+    }
+    .arrow{
+        width:50px;
+    }
+    .animation{
+        right: 2em;
+    }
+
+    
+}

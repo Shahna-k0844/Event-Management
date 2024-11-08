@@ -1,0 +1,182 @@
+.flex_class{
+    display: flex;
+    gap: 140px;
+    padding-inline: 17em;
+    padding-top: 5em;
+    padding-bottom: 3em;
+
+}
+.back_color {
+    background-color: #f5f6de;
+    padding-bottom: 4em;
+    padding-inline: 3em;
+
+}
+.odd_one{
+    padding-left: 40px;
+}
+.pairs{
+    text-align: center;
+    align-items: center;
+}
+.sub_head{
+    font-weight: 750;
+    color: rgb(70, 70, 70);
+    padding-top: .84em;
+}
+.start{
+    text-align: center;
+}
+#start_planning{
+    color: white;
+    font-weight: 600;
+    background-color: #606c38; 
+    width: fit-content;
+    padding: .2em;
+    padding-inline: 1em;
+    text-decoration: none;
+
+}
+#start_planning:hover{
+    background-color: rgb(32, 50, 12);
+}
+.first_about{
+    padding-inline: 8em;
+    padding-top: 5em;
+    padding-bottom: 4em;
+    /* height: 30em; */
+
+}
+.bottom{
+    padding-inline: 5em;
+}
+.head_about{
+    text-align: center;
+}
+.subhead_about{
+    text-align: center;
+    font-size: 19pt;
+    padding-top: .7em;
+}
+.manage{
+    
+    width: 40%;
+    height: 200px;
+}
+.mana{
+    text-align: center;
+    align-items: center;
+}
+.paragraph{
+    padding-top: .6em;
+    font-weight: 400;
+    font-size: 12pt;
+}
+.second2{
+    padding-inline: 7em;
+    display: flex;
+    padding-bottom: 2em;
+    padding-top: 3em;
+}
+.second_image_about{
+    width: 500px;
+    height:300px
+}
+.second3{
+    padding-inline: 3em;
+    display: flex;
+    gap: 30px;
+    padding-bottom: 2em;
+    padding-top: 3em;
+    background-color: #f5f6de;
+
+}
+.third3{
+    padding-inline: 7em;
+    padding-bottom: 5em;
+
+}
+.second_images{
+    width: 400px;
+}
+.second_imagess{
+    width: 400px;
+    padding-top: 3em;
+}
+.second_heading{
+    padding-top: 1.5em;
+}
+.lists{
+    padding-inline: 8em;
+    list-style: none;
+    padding-top: 2em;
+    
+}
+.flaaa{
+    display: flex;
+    gap: 70px;
+}
+.arrow{
+    width: 70px;
+}
+.animation{
+    position: fixed;
+    z-index: 1;
+    right: 5em;
+    top: 10em;
+    animation:arrow 2s infinite;
+
+}
+@keyframes arrow {
+    0%{ transform: scale(1);}
+    50%{transform: scale(.88);}
+    100%{transform: scale(1);}
+
+    
+}
+@media screen and (max-width:425px) {
+    .flex_class{
+        display: block;
+        padding-inline: 2em;
+        padding-top: 1em;
+    }
+    .odd_one{
+        padding-inline: 1em;
+    }
+    .first_about{
+        padding-inline: 1.3em;
+    }
+    .second2{
+        padding-inline: 1.3em;
+    }
+    .lists{
+        padding-inline: 2em;
+    }
+    .second_imagess{
+        display: none;
+    }
+    .third3{
+        padding-inline: 1.3em;
+    }
+    .second3{
+        display: block;
+        padding-inline: 1.3em;
+    }
+    .second_images{
+        width: 300px;
+        justify-items: center;
+    }
+    .second_heading{
+        text-align: center;
+    }
+    .subhead_about{
+        font-size: 10pt;
+    }
+    .arrow{
+        width:50px;
+    }
+    .animation{
+        right: 2em;
+    }
+    
+}

@@ -1,0 +1,15 @@
+{% extends "admincommon.html" %}
+{% load static %}
+{% block title %}addphoto{% endblock title %}
+{% block admincontents %}
+<link rel="stylesheet" href="{% static "css/create_image1.css" %}">
+
+<div class="created" style='background-image: url("{% static 'images/green7.jpg' %}");background-size: cover;background-repeat: no-repeat;background-position: center;width: 100%;background-attachment:fixed'>
+  <p class="ur">Add Photos</p>
+<form class="add_image"  action="" method="post" enctype="multipart/form-data">
+  {% csrf_token %}
+  {{forms.as_p}}
+  <button type="submit" class="btn btn-danger">Add photos</button>
+</form>
+</div>
+{% endblock admincontents %}

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+{% extends "admincommon.html" %}
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="{% static "css/headeradmin.css" %}"> -->
+    <link rel="stylesheet" href="{% static "css/createform1.css" %}">
+    {% block titleadmin %}Adminhome{% endblock titleadmin %}
+
+</head>
+<body>
+    {% block admincontents %}
+    <link rel="stylesheet" href="{% static "css/adminhome1.css" %}">
+    <section>
+        {% if event %}
+        <div class="event_table" style='background-image: url("{% static 'images/flora2.jpg' %}");background-size: cover;background-repeat: no-repeat;background-position: center;width: 100%;background-attachment:fixed'>
+            <table>
+                <tr>
+                    <th>Image</th>
+                    <th>Event Name</th>
+                    <th>Description</th>
+                    <th>Delete</th>
+                    <th>Edit</th>
+                </tr>
+                {% for i in event %}
+    
+                <tr>
+                    <td><img class="eventimages" src="{{i.image.url}}" alt=""></td>
+                    <td>{{i.name}}</td>
+                    <td>{{i.description}}</td>
+                    <td><a href="{% url "delete" i.id %}"><button type="button" class="btn btn-danger btn-sm">Delete</button></a></td>
+                    <td><a href="{% url "edit" i.id %}"><button type="button" class="btn btn-success btn-sm">Edit</button></a></td>
+                </tr>
+                {% endfor %}
+            </table>    
+        </div>
+        {% else %}
+        <h4>Create Events</h4>
+        {% endif %}
+        
+    </section>
+
+    {% endblock admincontents %}
+
+</body>
+</html>

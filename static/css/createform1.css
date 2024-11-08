@@ -1,0 +1,30 @@
+.createform{
+    padding-top:5em;
+    padding-inline: 28em;
+    padding-bottom: 5em;
+}
+.eventimages{
+    width: 200px;
+}
+table,td,th{
+    width: 100%;
+    border: 1px solid black;
+}
+.create_form{
+    padding-inline: 10em;
+    background-color: rgb(254, 231, 247);
+    padding: 3em;
+    border: 1px solid black;
+    width: fit-content;
+    
+
+    
+}
+@media screen and (max-width:425px){
+    .createform{
+        padding-top:1em;
+        padding-inline: .1em;
+        padding-bottom: 2em;
+    }
+    
+}

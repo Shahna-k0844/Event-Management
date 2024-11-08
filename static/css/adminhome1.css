@@ -1,0 +1,19 @@
+.event_table{
+    padding-top: 2em;
+    justify-items: center;
+    padding-inline: 6em;
+    padding-bottom: 3em;
+}
+table ,td,th{
+    border: 1px solid black;
+    padding: 1.9em;
+    background-color: white;
+}
+th{
+    color: rgb(211, 152, 35);
+    padding: 1em;
+}
+.eventimages{
+    width: 200px;
+    height: 150px;
+}

@@ -1,0 +1,85 @@
+.book_form{
+    /* justify-content: center; */
+    justify-items: center;
+    padding-top: 3em;
+    padding-bottom: 5em;
+    
+}
+.form1{
+    /* width: 40%; */
+    background-color:rgb(252, 247, 247);
+    padding: 3em;
+    height: 36.5em;
+    width: 600px;
+
+}
+.flexboth{
+    display: flex;
+    gap:60px
+}
+.form_login{
+    background-color: rgb(255, 254, 253);
+    padding: 3em;
+
+}
+#submit1{
+    background-color: #dd2d4a;
+    padding-inline:8em;
+}
+.submit_{
+    padding-inline:5em;
+    padding-top: 2em;
+}
+#submit1 :hover{
+    background-color: #640320;
+
+
+}
+.label{
+    color: #c02050;
+    font-weight: 500;
+}
+.heading_{
+    color: rgb(69, 87, 39);
+    justify-items: center;
+    padding-bottom: 2em;
+    text-transform: uppercase;
+
+}
+.please{
+    color: rgb(139, 30, 45);
+    font-weight: 600;
+    font-size: 1.3em;
+    justify-items: center;
+    text-transform: uppercase;
+}
+#emailHelp{
+    display: block;
+}
+@media screen  and (max-width:425px){
+    .form1{
+        /* width: 40%; */
+        background-color:rgb(252, 247, 247);
+        padding: 1em;
+        width: 400px;
+    
+    }
+        #emailHelp{
+        display: none;
+    }
+    .book_form{
+        width: 100%;
+        padding-inline: 1em;
+    }
+    .submit_{
+        padding-top: -1em;
+    }
+    #submit1{
+        padding-inline:2em;
+    }
+    
+
+
+    
+    
+}

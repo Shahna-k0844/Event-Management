@@ -1,0 +1,78 @@
+.details{
+    padding-top: 5em;
+    border: 1px solid black; 
+    /* width: fit-content; */
+    padding: 3em;
+    padding-inline: 5em;
+    padding-top: 4em;
+    background-color: #cdd5a4;
+    width: 750px;
+    /* align-items: center;
+    text-align: center; */
+    /* padding-inline:8em; */
+    /* font-size: 2em; */
+}
+.all{
+    justify-items: center;
+    padding-top: 4em;
+    
+    /* background-color: antiquewhite; */
+
+}
+.cancel_link{
+    text-decoration: none;
+    background-color: rgb(215, 62, 93);
+    width: fit-content;
+    color: white;
+    padding: .2em;
+    padding-inline: 12em;
+}
+.cancel_button{
+    padding-top: 2em;
+    text-align: center;
+    font-weight: 600;
+}
+table{
+    width: 700px;
+}
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: #f9eef4; 
+}
+
+.table-striped tbody tr:nth-of-type(even) {
+    background-color: #ffe2f2; 
+}
+
+.table-striped td h6 {
+    margin: 0;
+    font-weight: normal;
+}
+.confirmed{
+    align-items: center;
+    text-align: center;
+    padding-bottom: 1em;
+    /* padding-inline: 5em; */
+}
+.your{
+    color: brown;
+    text-transform: uppercase;
+
+}
+@media screen and (max-width:425px){
+    .details{
+        padding-top: 3em;
+        border: 1px solid black; 
+        /* width: fit-content; */
+        padding: 2em;
+        padding-inline: 2em;
+        padding-top: 4em;
+        background-color: #cdd5a4;
+        width: 400px;
+    }
+    .cancel_link{
+        padding-inline: 5em;
+    }
+    
+    
+    
+}
